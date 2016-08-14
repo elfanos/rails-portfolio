@@ -269,11 +269,13 @@
 
  .navbar{
    background-color: white;
+   border: 0px solid transparent;
  }
  .navbar-default .navbar-nav > li > a {
    color:black;
  }
  .navbar-default .navbar-nav > li{
+   float:left;
 
  }
  @media (min-width: 992px){
