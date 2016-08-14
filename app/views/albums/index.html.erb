@@ -1,0 +1,44 @@
+<!-- <div id="album-views">
+      <div class="jumbotron">
+        <div class="container">
+          <div class="row">
+            <%#@albums.each do |album|%>
+            <div class="col-md-4">
+                <%#=link_to album_path(album) do %>
+                <div class="hovereffect">
+
+                    <%#=image_tag(album.photos.first.picture.normal_thumb, class:"img-responsive greyscale")%>
+                    <div class="overlay">
+                       <h2><%#=album.name%></h2>
+
+                    </div>
+                </div>
+                <%#end%>
+            </div>
+            <%#end%>
+          </div>
+        </div>
+      </div>
+</div> -->
+<div id="album-views">
+  <div class="container">
+    <div class="row">
+      <%@albums.each do |album|%>
+        <div class="col-md-4">
+          <%=link_to album_path(album) do %>
+            <div class="new-hovereffect">
+              <%=image_tag(album.photos.first.picture.normal_thumb, class:"img-responsive greyscale")%>
+                <div class="new-overlay">
+                  <div class="new-age">
+                    <h2>
+                      <%=album.name%>
+                    </h2>
+                  </div>
+                </div>
+            </div>
+            <%end%>
+        </div>
+      <%end%>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,85 @@
+<script>
+$(document).ready(function(){
+  var fullscreen = 1200;
+  var tablet_screen = 990;
+  var mobile_screen = 770;
+
+  $(window).resize(function() {
+    console.log($(window).width());
+    if($(window).width() > fullscreen){
+      $("<%# @full_screen = true %>");
+
+      console.log("inresize?" + "<%#= @full_screen %>");
+      // location.reload();
+    }
+    if($(window).width() > tablet_screen && $(window).width() < fullscreen){
+      console.log("hejjejej")
+      console.log("hej" + "<%# @full_screen = false %>");
+      // location.reload();
+    }
+
+  });
+});
+
+</script>
+
+<div id="show-pictures">
+
+  <div class="container">
+    <div class="row">
+      <div class="center-pictures">
+        <div class="section group">
+            <%number=0%>
+            <%@photos.shuffle.each do |photo|%>
+                <%if number < 1%>
+
+                    <div class="col span_2_of_7">
+                      <%=link_to(photo_path(photo)) do%>
+                        <%=image_tag(photo.picture.normal_thumb, class:"img-responsive greyscale")%>
+                      <%end%>
+                    </div>
+                <%elsif number > 2 and number < 4%>
+                    <div class="col span_3_of_7">
+                      <%=link_to(photo_path(photo)) do%>
+                        <%=image_tag(photo.picture.normal_thumb, class:"img-responsive greyscale")%>
+                      <%end%>
+                    </div>
+                <%elsif number > 3 and number < 5 %>
+                    <div class="col span_2_of_7">
+                      <%=link_to(photo_path(photo)) do%>
+                        <%=image_tag(photo.picture.normal_thumb, class:"img-responsive greyscale")%>
+                      <%end%>
+                    </div>
+
+                <%elsif number  > 4 and number < 6%>
+                    <div class="col span_2_of_7">
+                        <%=link_to(photo_path(photo)) do%>
+                          <%=image_tag(photo.picture.normal_thumb, class:"img-responsive greyscale")%>
+                        <%end%>
+                    </div>
+                <%elsif number  > 5 and number < 8%>
+
+                    <div class="col span_3_of_7">
+                      <%=link_to(photo_path(photo)) do%>
+                          <%=image_tag(photo.picture.normal_thumb, class:"img-responsive greyscale")%>
+                      <%end%>
+                    </div>
+
+                <%elsif number  > 7 and number < 9%>
+
+                    <div class="col span_2_of_7">
+                      <%=link_to(photo_path(photo)) do%>
+                        <%=image_tag(photo.picture.normal_thumb, class:"img-responsive greyscale")%>
+                      <%end%>
+                    </div>
+                <%elsif number > 8 and number < 12%>
+                    <%number = 0%>
+                <%end%>
+                <%number += 1%>
+            <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
