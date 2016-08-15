@@ -1,9 +1,17 @@
 <div id="start-page">
+  <div class="front-page">
+    <div class="jumbotron">
+      <div class="container">
+      </div>
+    </div>
+  </div>
   <div class="jumbotron">
     <div class="container">
       <div class="row">
       <div class="col-md-6 content-left">
-        <%#=image_tag(@photo.first.picture.normal_thumb)%>
+
+          <%=image_tag(image_path("frontbild.jpg"), class:"img-responsive")%>
+
         <div class="header-overlay">
           <div class="new-age">
             <h2>Julia</h2>
