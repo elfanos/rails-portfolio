@@ -57,7 +57,7 @@ $(document).ready(function(){
                           <%=image_tag(photo.picture.normal_thumb, class:"img-responsive greyscale")%>
                         <%end%>
                     </div>
-                <%elsif number  > 5 and number < 8%>
+                <%elsif number  > 5 and number < 7%>
 
                     <div class="col span_3_of_7">
                       <%=link_to(photo_path(photo)) do%>
@@ -65,14 +65,20 @@ $(document).ready(function(){
                       <%end%>
                     </div>
 
-                <%elsif number  > 7 and number < 9%>
+                <%elsif number  > 6 and number < 9%>
 
                     <div class="col span_2_of_7">
                       <%=link_to(photo_path(photo)) do%>
                         <%=image_tag(photo.picture.normal_thumb, class:"img-responsive greyscale")%>
                       <%end%>
                     </div>
-                <%elsif number > 8 and number < 12%>
+                <%elsif number  > 7 and number < 10%>
+                    <div class="col span_3_of_7">
+                      <%=link_to(photo_path(photo)) do%>
+                        <%=image_tag(photo.picture.normal_thumb, class:"img-responsive greyscale")%>
+                      <%end%>
+                    </div>
+                <%elsif number > 9 and number < 12%>
                     <%number = 0%>
                 <%end%>
                 <%number += 1%>

@@ -3,35 +3,57 @@
 <div id="contact-page">
   <div class="jumbotron">
     <div class="container">
-      <div class="col-md-6">
-        <h3>Send A message to Us</h3>
-        <hr></hr>
-        <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
-          <%= f.input :name, :required => true %>
-          <%= f.input :email, :required => true %>
-          <%= f.input :message, :as => :text, :required => true %>
-          <div class= "hidden">
-            <%= f.input :nickname, :hint => 'Leave this field blank!' %>
-          </div>
-          <div>
-            </br>
-            <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
-          </div>
-        <% end %>
+      <div class="col-lg-6">
+            <div class="well bs-component">
+              <form class="form-horizontal">
+                <%= simple_form_for @contact, :defaults => {:required => false, :label =>false} do |f| %>
+                <fieldset>
+                  <h3>Send A message to Us</h3>
+                  <hr></hr>
+                  <div class="form-group">
+                    <label for="inputName" class="col-lg-2 control-label">Name</label>
+                    <div class="col-lg-10">
+                        <%= f.text_field :name, class:"form-control", placeholder:"Name...", id:"inputName" %>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                    <div class="col-lg-10">
+                        <%= f.text_field :email, class:"form-control", placeholder:"Email...", id:"inputEmail" %>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="textMessage" class="col-lg-2 control-label">Message</label>
+                    <div class="col-lg-10">
+                      <%= f.text_field :message, :as => :text, class:"form-control", rows:"3", style:"margin-top: 0px; margin-bottom: 0px; height: 107px;"%>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                      <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
+                    </div>
+                  </div>
+              </fieldset>
+            <% end %>
+          </form>
+        </div>
       </div>
       <div class="col-md-6">
-        <h2>This is the beginning of a beautiful relationship...</h2>
-        <p>
-          Please contact me for any requests about photo shoots, assignment work or any other photographic needs.
-        </p>
-          </br>
+        <div class="text-area">
+          <h2><strong>This is the beginning of a beautiful relationship...<strong></h2>
+            <hr style="width:100%"></hr>
           <p>
-          Thanks!
+            Please contact me for any requests about photo shoots, assignment work or any other photographic needs.
           </p>
-          </br>
-          <p>
-          Email: julia at gmail.com
-          </p>
+            </br>
+            <p>
+            Thanks!
+            </p>
+            </br>
+            <p>
+            Email: julia at gmail.com
+            </p>
+          </div>
       </div>
     </div>
   </div>

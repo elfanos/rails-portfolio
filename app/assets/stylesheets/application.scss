@@ -10,12 +10,13 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require bootstrap.min.css
  *= require_tree .
  *= require_self
  */
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
+ // @import "bootstrap-sprockets";
+ // @import "bootstrap";
 
  h1{
    font-family: "adobe-caslon-pro";
@@ -26,7 +27,7 @@
    font-size: 25px;
 
  }
- h3{
+h2, h3{
    font-family: "adobe-caslon-pro";
    text-transform: none;
    letter-spacing: 2px;
@@ -34,6 +35,14 @@
    font-style: italic;
    font-size: 20px;
 
+ }
+ p{
+   font-family: "adobe-caslon-pro";
+   text-transform: none;
+   letter-spacing: 2px;
+   font-weight: 400;
+   font-style: italic;
+   font-size: 10px;
  }
  .owl-theme .owl-controls .owl-buttons div {
      color: black;
@@ -83,16 +92,13 @@
 
  .portfolio-nav{
 
-   li{
-       font-size: 30px;
-     }
      a {
      font-family: "adobe-caslon-pro";
      text-transform: none;
      letter-spacing: 9px;
      font-weight: 400;
      font-style: italic;
-     font-size: 19px;
+     font-size: 14px;
      }
    //
    // li a {

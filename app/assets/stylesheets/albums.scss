@@ -196,7 +196,7 @@ $white: white;
   }
 }
 #show-pictures{
-    background-color: rgba(177,77,77, 0.3);
+    background-color: white;
   $red: #B14D4D;
   /*  SECTIONS  */
   .section {
@@ -216,7 +216,6 @@ $white: white;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       background: white;
-      background-blend-mode: screen;
       margin-left: 10px;
       height: 300px;
     }
@@ -226,8 +225,7 @@ $white: white;
 
     	//filter: gray;
     	filter: grayscale(100%);
-      mix-blend-mode:color-dodge;
-      // filter: contrast(100%);
+      filter: contrast(180%);
     }
     .col:hover .greyscale{
       -webkit-filter: grayscale(0);
@@ -282,7 +280,7 @@ $white: white;
   }
 
   .span_2_of_7 {
-    	width: 27.42%;
+    	width: 26.42%;
   }
 
   .span_1_of_7 {
