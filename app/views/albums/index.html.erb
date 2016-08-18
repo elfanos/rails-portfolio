@@ -24,19 +24,20 @@
   <div class="container">
     <div class="row">
       <%@albums.each do |album|%>
+      <div class="my-albums">
         <div class="col-md-4">
-          <%=link_to album_path(album) do %>
-            <div class="new-hovereffect">
-              <%=image_tag(album.photos.first.picture.normal_thumb, class:"img-responsive greyscale")%>
-                <div class="new-overlay">
-                  <div class="new-age">
-                    <h2>
-                      <%=album.name%>
-                    </h2>
-                  </div>
+
+            <div class="hovereffect">
+
+                <%=link_to album_path(album) do %>
+                <%=image_tag(album.photos.first.picture.normal_thumb, class:"img-responsive")%>
+                <div class="overlay">
+                    <h2><%=album.name%></h2>
                 </div>
+                  <%end%>
             </div>
-            <%end%>
+
+        </div>
         </div>
       <%end%>
     </div>
