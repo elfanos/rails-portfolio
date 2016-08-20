@@ -11,6 +11,9 @@
  * file per style scope.
  *
  *= require bootstrap.min.css
+ *= require owl.carousel
+ *= require owl.theme
+ *= require owl.transitions
  *= require_tree .
  *= require_self
  */
@@ -62,6 +65,18 @@ h2, h3{
      font-weight: 400;
      font-style: italic;
      font-size: 25px;
+ }
+ .owl-theme .owl-controls .owl-page span {
+    display: block;
+    width: 0;
+    height: 0;
+    margin: 5px 7px;
+    filter: Alpha(Opacity=50);
+    opacity: 0;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    background: #869791;
  }
  a{
    color:black;
@@ -303,16 +318,16 @@ h2, h3{
 
  }
 
- .owl-col{
-   h1,h2,h3{
-     text-align: center;
-   }
-
- }
- .owl-centered {
-   margin: auto;
-   max-width: 800px;
- }
+ // .owl-col{
+ //   h1,h2,h3{
+ //     text-align: center;
+ //   }
+ //
+ // }
+ // .owl-centered {
+ //   margin: auto;
+ //   max-width: 800px;
+ // }
 
  .item img{
      display: block;

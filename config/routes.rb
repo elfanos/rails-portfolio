@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :albums
   resources :articles
   resources :start
-
+  resources :imagesliders
   match '/contacts',     to: 'contacts#new',             via: 'get'
 
   resources "contacts", only: [:new, :create]

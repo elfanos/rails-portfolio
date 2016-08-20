@@ -1,10 +1,30 @@
+<script>
+  $(document).ready(function() {
+
+    var owl = $("#owl-demo");
+
+    owl.owlCarousel({
+      navigation : true,
+      singleItem : true,
+      dots: false,
+      transitionStyle : "fade"
+    });
+
+  });
+</script>
+
 <div id="picture-view">
   <div class="jumbotron">
+
     <div class="container">
       <div class="row center-picture">
           <div class="col-md-12">
-            <div class="picture">
-              <%=image_tag(@photo.picture.picture_view, class:"img-responsive center-block")%>
+            <div id="owl-demo" class="owl-carousel owl-theme">
+              <%@album.photos.each do |photo| %>
+                <div class="picture">
+                  <%=image_tag(photo.picture.picture_view, class:"img-responsive center-block")%>
+                </div>
+              <%end%>
             </div>
           </div>
       </div>
