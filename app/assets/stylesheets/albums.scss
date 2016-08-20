@@ -361,6 +361,14 @@ $white: white;
       filter: contrast(180%);
     }
   }
+  .col{
+    background-color: black;
+  }
+  .col:hover{
+    img{
+      opacity: 0.5;
+    }
+  }
   /*  COLUMN SETUP  */
   .col {
   	display: block;
