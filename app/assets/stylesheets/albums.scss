@@ -73,10 +73,10 @@ $white: white;
     position: relative;
     text-align: center;
     cursor: default;
-    border-radius: 0px 0px 0px 0px;
-    -moz-border-radius: 0px 0px 0px 0px;
-    -webkit-border-radius: 0px 0px 0px 0px;
-    border: 3px solid #e8e8e8;
+    // border-radius: 0px 0px 0px 0px;
+    // -moz-border-radius: 0px 0px 0px 0px;
+    // -webkit-border-radius: 0px 0px 0px 0px;
+    // border: 3px solid #e8e8e8;
     background: black;
 
   }
@@ -197,9 +197,9 @@ $white: white;
 
   .hovereffect{
     margin-bottom: 20px;
-    -webkit-box-shadow: 8px -2px 67px 0px rgba(0,0,0,0.52);
-    -moz-box-shadow: 8px -2px 67px 0px rgba(0,0,0,0.52);
-    box-shadow: 8px -2px 67px 0px rgba(0,0,0,0.52);
+    // -webkit-box-shadow: 8px -2px 67px 0px rgba(0,0,0,0.52);
+    // -moz-box-shadow: 8px -2px 67px 0px rgba(0,0,0,0.52);
+    // box-shadow: 8px -2px 67px 0px rgba(0,0,0,0.52);
   }
   #album-views{
     .hovereffect{
@@ -218,10 +218,10 @@ $white: white;
     text-align: center;
     cursor: default;
     background: black;
-    border-radius: 0px 0px 0px 0px;
-    -moz-border-radius: 0px 0px 0px 0px;
-    -webkit-border-radius: 0px 0px 0px 0px;
-    border: 3px solid #e8e8e8;
+    // border-radius: 0px 0px 0px 0px;
+    // -moz-border-radius: 0px 0px 0px 0px;
+    // -webkit-border-radius: 0px 0px 0px 0px;
+    // border: 3px solid #e8e8e8;
   }
   .hovereffect .fa-4x {
 
@@ -330,8 +330,12 @@ $white: white;
   	margin: 0px;
 
   }
+  .container-full {
+  margin: 0 auto;
+  width: 100%;
+  }
   .center-pictures{
-    margin: 100px;
+    margin: 50px;
     img{
       width: calc(100% + 20px);
       -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -373,15 +377,15 @@ $white: white;
   .col {
   	display: block;
   	float:left;
-  	margin: 1% 0 1% 1.6%;
-    -webkit-box-shadow: 8px -2px 67px 0px rgba(0,0,0,0.52);
-    -moz-box-shadow: 8px -2px 67px 0px rgba(0,0,0,0.52);
-    box-shadow: 8px -2px 67px 0px rgba(0,0,0,0.52);
+  	margin: 0.5% 0.5% 0% 0%;
+    // -webkit-box-shadow: 8px -2px 67px 0px rgba(0,0,0,0.52);
+    // -moz-box-shadow: 8px -2px 67px 0px rgba(0,0,0,0.52);
+    // box-shadow: 8px -2px 67px 0px rgba(0,0,0,0.52);
 
-    border-radius: 0px 0px 0px 0px;
-    -moz-border-radius: 0px 0px 0px 0px;
-    -webkit-border-radius: 0px 0px 0px 0px;
-    border: 3px solid #e8e8e8;
+    // border-radius: 0px 0px 0px 0px;
+    // -moz-border-radius: 0px 0px 0px 0px;
+    // -webkit-border-radius: 0px 0px 0px 0px;
+    // border: 3px solid #e8e8e8;
   }
   .col:first-child { margin-left: 0; }
 

@@ -25,8 +25,7 @@ $(document).ready(function(){
 
 <div id="show-pictures">
 
-  <div class="container">
-    <div class="row">
+  <div class="container-full">
       <div class="center-pictures">
         <div class="section group">
             <%number=0%>
@@ -38,13 +37,13 @@ $(document).ready(function(){
                       <%end%>
                     </div>
                 <%elsif number > 2 and number < 4%>
-                    <div class="col span_3_of_7">
+                    <div class="col span_2_of_7">
                       <%=link_to(photo_path(photo)) do%>
                         <%=image_tag(photo.picture.normal_thumb, class:"img-responsive")%>
                       <%end%>
                     </div>
                 <%elsif number > 3 and number < 5 %>
-                    <div class="col span_2_of_7">
+                    <div class="col span_3_of_7">
                       <%=link_to(photo_path(photo)) do%>
                         <%=image_tag(photo.picture.normal_thumb, class:"img-responsive")%>
                       <%end%>
@@ -72,7 +71,7 @@ $(document).ready(function(){
                       <%end%>
                     </div>
                 <%elsif number  > 7 and number < 10%>
-                    <div class="col span_3_of_7">
+                    <div class="col span_2_of_7">
                       <%=link_to(photo_path(photo)) do%>
                         <%=image_tag(photo.picture.normal_thumb, class:"img-responsive ")%>
                       <%end%>
@@ -85,6 +84,5 @@ $(document).ready(function(){
           </div>
         </div>
       </div>
-    </div>
   </div>
 </div>
