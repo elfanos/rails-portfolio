@@ -2,9 +2,9 @@
   <div class="container">
     <div class="center-pictures">
         <div class="section group">
-            <%number=0%>
+            <%number=1%>
             <%@albums.each do |album|%>
-                <%if number < 1%>
+                <%if number <= 1%>
                 <div class="col span_4_of_10">
                   <div class="hovereffect">
                       <%=link_to album_path(album) do %>
@@ -15,7 +15,7 @@
                       <%end%>
                   </div>
                 </div>
-                <%elsif number > 2 and number < 4%>
+                <%elsif number >= 2 and number <= 3%>
                   <div class="col span_6_of_10">
                     <div class="hovereffect">
                         <%=link_to album_path(album) do %>
@@ -26,7 +26,7 @@
                         <%end%>
                     </div>
                   </div>
-                <%elsif number > 3 and number < 5 %>
+                <%elsif number >= 3 and number < 4 %>
                   <div class="col span_6_of_10">
                     <div class="hovereffect">
                         <%=link_to album_path(album) do %>
@@ -37,7 +37,7 @@
                         <%end%>
                     </div>
                   </div>
-                <%elsif number  > 4 and number < 6%>
+                <%elsif number  >= 4 and number < 5%>
                   <div class="col span_4_of_10">
                     <div class="hovereffect">
                         <%=link_to album_path(album) do %>
@@ -48,7 +48,7 @@
                         <%end%>
                     </div>
                   </div>
-                <%elsif number  > 5 and number < 7%>
+                <%elsif number  >=5 and number < 6%>
 
                   <div class="col span_5_of_10">
                     <div class="hovereffect">
@@ -60,7 +60,7 @@
                         <%end%>
                     </div>
                   </div>
-                <%elsif number  > 6 and number < 8%>
+                <%elsif number  >= 6 and number < 7%>
                   <div class="col span_5_of_10">
                     <div class="hovereffect">
                         <%=link_to album_path(album) do %>
@@ -71,10 +71,11 @@
                         <%end%>
                     </div>
                   </div>
-                <%elsif number  > 7%>
+                <%elsif number  >=7%>
                   <%number = 0%>
                 <%end%>
                 <%number += 1%>
+                <%=number %>
             <%end%>
 
           </div>
