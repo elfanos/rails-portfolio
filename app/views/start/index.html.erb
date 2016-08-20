@@ -1,53 +1,69 @@
-<div id="start-page">
-  <div class="front-page">
-    <div class="jumbotron">
-      <div class="container">
-      </div>
+<div id="start-index">
+  <div class="container">
+    <div class="section group">
+      	<div class="col span_1_of_3">
+      	  <div class="headers">
+            <h2><strong>about</strong></h2>
+
+          </div>
+          <div class="text">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Aenean nec nibh vitae nunc vehicula porttitor.
+              In suscipit justo sed felis tristique vehicula. Nam vitae venenatis
+               dui. Integer nec lorem tempo
+            </p>
+          </div>
+          <div class="headers">
+            <h2><strong>experince</strong></h2>
+
+          </div>
+          <div class="text">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Aenean nec nibh vitae nunc vehicula porttit
+            </p>
+          </div>
+          <div class="headers">
+            <h2><strong>Contact me!</strong></h2>
+
+          </div>
+          <div class="text">
+            <p>
+              Social medias
+            </p>
+            <i class="fa fa-twitter" aria-hidden="true">haj</i>
+            <i class="fa fa-facebook" aria-hidden="true">haj</i>
+            <i class="fa fa-flickr" aria-hidden="true">haj</i>
+          </br>
+        </br>
+            <p>
+              or send me a mail
+            </p>
+            <%=link_to "Contact",contacts_path, class:"btn btn-primary"%>
+          </div>
+
+      	</div>
+      	<div class="col span_1_of_3">
+          <div class="headers">
+            <h2><strong>CLIENTS</strong></h2>
+
+          </div>
+          <div class="text">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Aenean nec nibh vitae nunc vehicula porttitor.
+              In suscipit justo sed felis tristique vehicula. Nam vitae venenatis
+               dui. Integer nec lorem tempo
+            </p>
+          </div>
+      	</div>
+      	<div class="col span_1_of_3">
+        	<div class="picture-holder">
+            <%=image_tag(@photo.picture.normal_thumb, class:"img-responsive")%>
+          </div>
+      	</div>
     </div>
+
   </div>
-  <div class="jumbotron">
-    <div class="container">
-      <div class="row">
-      <div class="col-md-6 content-left">
-
-          <%=image_tag(image_path("frontbild.jpg"), class:"img-responsive")%>
-
-        <div class="header-overlay">
-          <div class="new-age">
-            <h2>Julia</h2>
-          </div>
-          <div class="new-surename">
-            <h2>Grufving</h2>
-          </div>
-          <div class="new-proffesion">
-            <h2>photographer</h2>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 content-right">
-        <div class="text-content">
-          <div class="center-block">
-            <h1>About me</h1>
-          </div>
-          <hr></hr>
-          <p>
-            Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit.
-             Mauris ut tellus tincidunt, rhoncus ante in, blandit ante.
-              Nam lacinia sed mauris eget molestie. Sed in quam erat.
-              Morbi ac aliquet mauris. Fusce tempor tempor felis. Aliquam
-               vel diam at augue euismod commodo non
-               m vel diam at augue euismod commodo non at tortor
-               . Sed eget leo diam. Nunc sed gravida quam.
-               In consectetur purus non purus susci
-          </p>
-          <div class="pull-left">
-            <i class="fa fa-facebook fa-2x"></i>
-            <i class="fa fa-instagram fa-2x"></i>
-            <i class="fa fa-twitter fa-2x"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
 </div>

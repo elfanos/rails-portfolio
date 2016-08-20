@@ -1,0 +1,119 @@
+// Place all the styles related to the portraits controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#portrait-pictures{
+    background-color: white;
+  $red: #B14D4D;
+  /*  SECTIONS  */
+  .section {
+  	clear: both;
+  	padding: 0px;
+  	margin: 0px;
+
+  }
+  .container-full {
+  margin: 0 auto;
+  width: 100%;
+  }
+  .center-pictures{
+    margin: 50px;
+    img{
+      width: calc(100% + 20px);
+      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      transition: opacity 0.35s, transform 0.35s;
+      -webkit-transform: translate3d(-10px,0,0);
+      transform: translate3d(-10px,0,0);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      background: white;
+      margin-left: 10px;
+      height: 300px;
+    }
+    .greyscale{
+      -webkit-filter: grayscale(1);
+    	-webkit-filter: grayscale(100%);
+
+    	//filter: gray;
+    	filter: grayscale(100%);
+      filter: contrast(180%);
+    }
+    .col:hover .greyscale{
+      -webkit-filter: grayscale(0);
+    	-webkit-filter: grayscale(0%);
+
+    	//filter: gray;
+    	filter: grayscale(0%);
+      filter: contrast(180%);
+    }
+  }
+  .col{
+    background-color: black;
+  }
+  .col:hover{
+    img{
+      opacity: 0.5;
+    }
+  }
+  /*  COLUMN SETUP  */
+  .col {
+  	display: block;
+  	float:left;
+  	margin: 0.5% 0.5% 0% 0%;
+    // -webkit-box-shadow: 8px -2px 67px 0px rgba(0,0,0,0.52);
+    // -moz-box-shadow: 8px -2px 67px 0px rgba(0,0,0,0.52);
+    // box-shadow: 8px -2px 67px 0px rgba(0,0,0,0.52);
+
+    // border-radius: 0px 0px 0px 0px;
+    // -moz-border-radius: 0px 0px 0px 0px;
+    // -webkit-border-radius: 0px 0px 0px 0px;
+    // border: 3px solid #e8e8e8;
+  }
+  .col:first-child { margin-left: 0; }
+
+  /*  GROUPING  */
+  .group:before,
+  .group:after { content:""; display:table; }
+  .group:after { clear:both;}
+  .group { zoom:1; /* For IE 6/7 */ }
+
+  /*  GRID OF SEVEN  */
+  .span_7_of_7 {
+  	width: 100%;
+  }
+
+  .span_6_of_7 {
+    	width: 85.48%;
+  }
+
+  .span_5_of_7 {
+    	width: 70.97%;
+  }
+
+  .span_4_of_7 {
+    	width: 56.45%;
+  }
+
+  .span_3_of_7 {
+    	width: 41.94%;
+  }
+
+  .span_2_of_7 {
+    	width: 26.42%;
+  }
+
+  .span_1_of_7 {
+    	width: 12.91%;
+  }
+  /*double span*/
+  .span_1_2_of_7{
+    width: 40.33%;
+  }
+
+  /*  GO FULL WIDTH BELOW 480 PIXELS */
+  @media only screen and (max-width: 480px) {
+  	.col {  margin: 1% 0 1% 0%; }
+  	.span_1_of_7, .span_2_of_7, .span_3_of_7, .span_4_of_7, .span_5_of_7, .span_6_of_7, .span_7_of_7 {
+      width: 100%;
+    }
+  }
+}

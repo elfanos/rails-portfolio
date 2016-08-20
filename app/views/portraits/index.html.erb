@@ -1,0 +1,63 @@
+
+<div id="show-pictures">
+  <div class="container-full">
+      <div class="center-pictures">
+        <div class="section group">
+            <%number=0%>
+            <%@photos.shuffle.each do |photo|%>
+                <%if number < 1%>
+                    <div class="col span_2_of_7">
+                      <%=link_to(photo_path(photo)) do%>
+                        <%=image_tag(photo.picture.normal_thumb, class:"img-responsive ")%>
+                      <%end%>
+                    </div>
+                <%elsif number > 2 and number < 4%>
+                    <div class="col span_2_of_7">
+                      <%=link_to(photo_path(photo)) do%>
+                        <%=image_tag(photo.picture.normal_thumb, class:"img-responsive")%>
+                      <%end%>
+                    </div>
+                <%elsif number > 3 and number < 5 %>
+                    <div class="col span_3_of_7">
+                      <%=link_to(photo_path(photo)) do%>
+                        <%=image_tag(photo.picture.normal_thumb, class:"img-responsive")%>
+                      <%end%>
+                    </div>
+
+                <%elsif number  > 4 and number < 6%>
+                    <div class="col span_2_of_7">
+                        <%=link_to(photo_path(photo)) do%>
+                          <%=image_tag(photo.picture.normal_thumb, class:"img-responsive")%>
+                        <%end%>
+                    </div>
+                <%elsif number  > 5 and number < 7%>
+
+                    <div class="col span_3_of_7">
+                      <%=link_to(photo_path(photo)) do%>
+                          <%=image_tag(photo.picture.normal_thumb, class:"img-responsive")%>
+                      <%end%>
+                    </div>
+
+                <%elsif number  > 6 and number < 9%>
+
+                    <div class="col span_2_of_7">
+                      <%=link_to(photo_path(photo)) do%>
+                        <%=image_tag(photo.picture.normal_thumb, class:"img-responsive ")%>
+                      <%end%>
+                    </div>
+                <%elsif number  > 7 and number < 10%>
+                    <div class="col span_2_of_7">
+                      <%=link_to(photo_path(photo)) do%>
+                        <%=image_tag(photo.picture.normal_thumb, class:"img-responsive ")%>
+                      <%end%>
+                    </div>
+                <%elsif number > 9 and number < 12%>
+                    <%number = 0%>
+                <%end%>
+                <%number += 1%>
+            <%end%>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
