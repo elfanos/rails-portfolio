@@ -5,7 +5,7 @@
             <%number=0%>
             <%@albums.each do |album|%>
                 <%if number < 1%>
-                <div class="col span_4_of_10">
+                <div class="col span_3_of_10">
                   <div class="hovereffect">
                       <%=link_to album_path(album) do %>
                         <%=image_tag(album.photos.first.picture.normal_thumb, class:"img-responsive")%>
@@ -16,7 +16,7 @@
                   </div>
                 </div>
                 <%elsif number > 2 and number < 4%>
-                  <div class="col span_6_of_10">
+                  <div class="col span_3_of_10">
                     <div class="hovereffect">
                         <%=link_to album_path(album) do %>
                           <%=image_tag(album.photos.first.picture.normal_thumb, class:"img-responsive")%>
@@ -27,7 +27,7 @@
                     </div>
                   </div>
                 <%elsif number > 3 and number < 5 %>
-                  <div class="col span_6_of_10">
+                  <div class="col span_4_of_10">
                     <div class="hovereffect">
                         <%=link_to album_path(album) do %>
                           <%=image_tag(album.photos.first.picture.normal_thumb, class:"img-responsive")%>
@@ -50,7 +50,7 @@
                   </div>
                 <%elsif number  > 5 and number < 7%>
 
-                  <div class="col span_5_of_10">
+                  <div class="col span_4_of_10">
                     <div class="hovereffect">
                         <%=link_to album_path(album) do %>
                           <%=image_tag(album.photos.first.picture.normal_thumb, class:"img-responsive")%>
@@ -72,7 +72,18 @@
                     </div>
                   </div>
                 <%elsif number  > 7 and number < 10%>
-                    <%number = 0%>
+                  <div class="col span_5_of_10">
+                    <div class="hovereffect">
+                        <%=link_to album_path(album) do %>
+                          <%=image_tag(album.photos.first.picture.normal_thumb, class:"img-responsive")%>
+                          <div class="overlay">
+                              <h2><%=album.name%></h2>
+                          </div>
+                        <%end%>
+                    </div>
+                  </div>
+                <%elsif number  > 8 and number < 12%>
+                  <%number = 0%>
                 <%end%>
                 <%number += 1%>
             <%end%>
