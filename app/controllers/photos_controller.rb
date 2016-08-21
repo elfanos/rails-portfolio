@@ -5,8 +5,10 @@ class PhotosController < ApplicationController
   end
   def show
     @photo = Photo.find(params[:id])
-    @album = Album.find(@photo.album_id)
-
+    @modal = PhotosHelper::ClassMethods.which_tpye_of_album(@photo)
+    puts "modal", @modal
+    @album = PhotosHelper::ClassMethods.get_ablum(@modal,@photo)
+    #@album = Album.find(@photo.album_id)
   end
   def new
     @photo = Photo.new
