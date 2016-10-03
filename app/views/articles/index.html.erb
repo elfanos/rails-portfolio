@@ -1,79 +1,21 @@
 <%#@articles.each do |article|%>
-  <%number = 1%>
-  <%if number < 4 %>
   <div class="article-top-div">
     <div class="jumbotron">
       <div class="container">
-          <%@articles.each do |article|%>
-
-              <%if number < 2%>
-              <div class="col-md-4">
-                <span>
-                  <%=image_tag(article.picture, class:"img-responsive")%>
-                  <h3><%=article.name%> About lorem impsum article Lasvegas</h3>
-                  <%=link_to "Read more", article.document.url(:original, false)-%>
-                  <hr></hr>
-                </span>
-              </div>
-              <%elsif number > 1 && number < 3%>
-              <div class="col-md-4">
-                <span>
-                  <%=image_tag(article.picture, class:"img-responsive")%>
-                  <h3><%=article.name%> About lorem impsum article Lasvegas</h3>
-                  <%=link_to "Read more", article.document.url(:original, false)-%>
-                  <hr></hr>
-                </span>
-              </div>
-              <%elsif number > 2 && number < 4%>
-              <div class="col-md-4">
-                <span>
-                  <%=image_tag(article.picture, class:"img-responsive")%>
-                  <h3><%=article.name%> About lorem impsum article Lasvegas</h3>
-                  <%=link_to "Read more", article.document.url(:original, false)%>
-                  <hr></hr>
-                </span>
-              </div>
+        <div class="row">
+          <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2">
+            <h2>Kategories</h2>
+          </div>
+          <div class="article-columns">
+            <div class="col-lg-10 col-sm-10 col-md-10 col-xs-10">
+              <%@articles.each_with_index do |article, index|%>
+                <%= render partial: 'shared/render_articles', locals: {article: article, index: index}%>
               <%end%>
-              <%number += 1%>
-          <%end%>
+            </div>
+          </div>
         </div>
-        <div class="container second-container">
-
-          <%@articles.last(3).each do |article|%>
-
-              <%if number < 2+number%>
-              <div class="col-md-4">
-                <span>
-                  <%=image_tag(article.picture, class:"img-responsive")%>
-                  <h3><%=article.name%> About lorem impsum article Lasvegas</h3>
-                  <%=link_to "Read more", article.document.url(:original, false)-%>
-                  <hr></hr>
-                </span>
-              </div>
-              <%elsif number > 1+number && number < 3+number%>
-              <div class="col-md-4">
-                <span>
-                  <%=image_tag(article.picture, class:"img-responsive")%>
-                  <h3><%=article.name%> About lorem impsum article Lasvegas</h3>
-                  <%=link_to "Read more", article.document.url(:original, false)-%>
-                  <hr></hr>
-                </span>
-              </div>
-              <%elsif number > 2+number && number < 4+number%>
-              <div class="col-md-4">
-                <span>
-                  <%=image_tag(article.picture, class:"img-responsive")%>
-                  <h3><%=article.name%> About lorem impsum article Lasvegas</h3>
-                  <%=link_to "Read more", article.document.url(:original, false)%>
-                  <hr></hr>
-                </span>
-              </div>
-              <%end%>
-              <%number += 1%>
-          <%end%>
-        </div>
+      </div>
     </div>
-    <p><%=number%></p>
   </div>
   <!-- <div class="first-article-div">
     <div class="jumbotron"> -->
@@ -102,4 +44,3 @@
     </div>
   </div>
 </section>
-<%end%>

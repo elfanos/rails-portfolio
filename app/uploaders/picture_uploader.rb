@@ -31,7 +31,6 @@ class PictureUploader < CarrierWave::Uploader::Base
   version :article_thumb do
     process :resize_to_fit =>[450,600]
   end
-
   version :width_thumb do
     process :resize_to_fill => [390,300]
   end
