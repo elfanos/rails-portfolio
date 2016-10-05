@@ -11,6 +11,25 @@
     });
 
   });
+
+  jQuery(document.documentElement).keyup(function (event) {
+
+    var owl = jQuery(".owl-carousel");
+
+    if (event.keyCode == 32){
+      owl.trigger('owl.next');
+    }
+    
+    // handle cursor keys
+    if (event.keyCode == 37) {
+       // go left
+       owl.trigger('owl.prev');
+    } else if (event.keyCode == 39) {
+       // go right
+       owl.trigger('owl.next');
+    }
+
+});
 </script>
 
 <div id="picture-view">
