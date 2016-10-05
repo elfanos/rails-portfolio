@@ -1,0 +1,71 @@
+<%if index < 1%>
+<div class="col span_4_of_10">
+  <div class="hovereffect">
+      <%=link_to album_path(album) do %>
+        <%=image_tag(album.photos.first.picture.normal_thumb, class:"img-responsive")%>
+        <div class="overlay">
+            <h2><%=album.name%></h2>
+        </div>
+      <%end%>
+  </div>
+</div>
+<%elsif index >= 1 and index < 2%>
+  <div class="col span_6_of_10">
+    <div class="hovereffect">
+        <%=link_to album_path(album) do %>
+          <%=image_tag(album.photos.first.picture.normal_thumb, class:"img-responsive")%>
+          <div class="overlay">
+              <h2><%=album.name%></h2>
+          </div>
+        <%end%>
+    </div>
+  </div>
+<%elsif index >= 2 and index < 3 %>
+  <div class="col span_6_of_10">
+    <div class="hovereffect">
+        <%=link_to album_path(album) do %>
+          <%=image_tag(album.photos.first.picture.normal_thumb, class:"img-responsive")%>
+          <div class="overlay">
+              <h2><%=album.name%></h2>
+          </div>
+        <%end%>
+    </div>
+  </div>
+<%elsif index >= 3 and index < 4%>
+  <div class="col span_4_of_10">
+    <div class="hovereffect">
+        <%=link_to album_path(album) do %>
+          <%=image_tag(album.photos.first.picture.normal_thumb, class:"img-responsive")%>
+          <div class="overlay">
+              <h2><%=album.name%></h2>
+          </div>
+        <%end%>
+    </div>
+  </div>
+<%elsif index >= 4 and index < 5%>
+
+  <div class="col span_5_of_10">
+    <div class="hovereffect">
+        <%=link_to album_path(album) do %>
+          <%=image_tag(album.photos.first.picture.normal_thumb, class:"img-responsive")%>
+          <div class="overlay">
+              <h2><%=album.name%></h2>
+          </div>
+        <%end%>
+    </div>
+  </div>
+<%elsif index  >= 5 and index < 6%>
+  <div class="col span_5_of_10">
+    <div class="hovereffect">
+        <%=link_to album_path(album) do %>
+          <%=image_tag(album.photos.first.picture.normal_thumb, class:"img-responsive")%>
+          <div class="overlay">
+              <h2><%=album.name%></h2>
+          </div>
+        <%end%>
+    </div>
+  </div>
+<%elsif index  >=6%>
+  <%index = 0%>
+  <%= render partial: 'render_normal_view', locals: {album: album, index: index} %>
+<%end%>
