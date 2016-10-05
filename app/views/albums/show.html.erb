@@ -29,33 +29,33 @@ $(document).ready(function(){
       <div class="center-pictures">
         <div class="section group">
             <%number=0%>
-            <%@photos.shuffle.each do |photo|%>
+            <%@photos.each do |photo|%>
                 <%if number < 1%>
                     <div class="col span_2_of_7">
                       <%=link_to(photo_path(photo)) do%>
                         <%=image_tag(photo.picture.normal_thumb, class:"img-responsive ")%>
                       <%end%>
                     </div>
-                <%elsif number >= 2 and number < 3%>
+                <%elsif number >= 1 and number < 2%>
                     <div class="col span_2_of_7">
                       <%=link_to(photo_path(photo)) do%>
                         <%=image_tag(photo.picture.normal_thumb, class:"img-responsive")%>
                       <%end%>
                     </div>
-                <%elsif number >= 3 and number < 4 %>
+                <%elsif number >= 2 and number < 3 %>
                     <div class="col span_3_of_7">
                       <%=link_to(photo_path(photo)) do%>
                         <%=image_tag(photo.picture.normal_thumb, class:"img-responsive")%>
                       <%end%>
                     </div>
 
-                <%elsif number  >= 4 and number < 5%>
+                <%elsif number  >= 3 and number < 4%>
                     <div class="col span_2_of_7">
                         <%=link_to(photo_path(photo)) do%>
                           <%=image_tag(photo.picture.normal_thumb, class:"img-responsive")%>
                         <%end%>
                     </div>
-                <%elsif number  >= 5 and number < 6%>
+                <%elsif number  >= 4 and number < 5%>
 
                     <div class="col span_3_of_7">
                       <%=link_to(photo_path(photo)) do%>
@@ -63,21 +63,20 @@ $(document).ready(function(){
                       <%end%>
                     </div>
 
-                <%elsif number  >= 6 and number < 7%>
+                <%elsif number  >= 5 and number < 6%>
 
                     <div class="col span_2_of_7">
                       <%=link_to(photo_path(photo)) do%>
                         <%=image_tag(photo.picture.normal_thumb, class:"img-responsive ")%>
                       <%end%>
                     </div>
-                <%elsif number  >= 7 and number < 8%>
+                <%elsif number  >= 6 and number < 7%>
+                    <%number = 0%>
                     <div class="col span_2_of_7">
                       <%=link_to(photo_path(photo)) do%>
                         <%=image_tag(photo.picture.normal_thumb, class:"img-responsive ")%>
                       <%end%>
                     </div>
-                <%elsif number >= 8 and number < 9%>
-                    <%number = 0%>
                 <%end%>
                 <%number += 1%>
             <%end%>
