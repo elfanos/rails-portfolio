@@ -7,7 +7,7 @@
           </div>
           <div class="article-columns">
             <div class="col-lg-10 col-sm-10 col-md-10 col-xs-10">
-              <%@articles.each do |article|%>
+              <%@articles.each_with_index do |article,index|%>
                 <%= render partial: 'shared/render_articles', locals: {article: article, index: index}%>
               <%end%>
             </div>
