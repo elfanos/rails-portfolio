@@ -12,7 +12,7 @@ CarrierWave.configure do |config|
     :provider              => 'AWS',
     :aws_access_key_id     => ENV['S3_KEY'],
     :aws_secret_access_key => ENV['S3_SECRET'],
-    :region                => 'eu-central-1'
+    :region                => ENV['AWS_REGION']
   }
 
   # For testing, upload files to local `tmp` folder.
