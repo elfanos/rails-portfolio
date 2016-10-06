@@ -14,11 +14,15 @@ module PhotosHelper
     def self.get_ablum(modal, photo)
       if modal == "album"
         puts"haj"
-        return Album.find(photo.album_id)
+        album = Album.find(photo.album_id)
+        album_ordered = album.photos.order("CASE WHEN id = '#{photo.id}' THEN 1 ELSE 2 END, id")
+        return album_ordered
       elsif modal == "interior"
-        return Interior.find(photo.interior_id)
+        interior = Interior.find(photo.interior_id)
+        return interior.photos.order("CASE WHEN id = '#{photo.id}' THEN 1 ELSE 2 END, id")
       elsif modal == "portrait"
-        return Portrait.find(photo.portrait_id)
+        portrait = Portrait.find(photo.portrait_id)
+        return portrait.photos.order("CASE WHEN id = '#{photo.id}' THEN 1 ELSE 2 END, id")
       else
         puts"haj"
          return "no relation"
