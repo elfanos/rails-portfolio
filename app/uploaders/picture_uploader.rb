@@ -84,7 +84,7 @@ class PictureUploader < CarrierWave::Uploader::Base
   # version :web_thumb do
   #   process :thumbnail_pdf
   # end
-  # 
+  #
   # def thumbnail_pdf
   #   manipulate! do |img|
   #     img.format("png", 1)
@@ -97,6 +97,21 @@ class PictureUploader < CarrierWave::Uploader::Base
   def extension_white_list
     %w(pdf jpg jpeg gif png)
   end
+  def cover
+    pdf = MiniMagick::Image.open(self.file.path)
+    pdf.pages.first
+  end
+
+  version :normal_white do
+     process :cover
+     process :resize_and_pad  => [450, 630, 'white']
+     process :convert => :png
+
+     def full_filename (for_file = model.source.file)
+       super.chomp(File.extname(super)) + '.png'
+     end
+  end
+
 
 
   # Override the filename of the uploaded files:
