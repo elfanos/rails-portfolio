@@ -4,9 +4,10 @@
         <div class="section group">
           <% number = 0 %>
             <%@albums.each_with_index do |album,index|%>
-              <%= render partial: 'render_album_view', locals: {album: album, index: number} %>
-              <% number += 1 %>
-
+              <%if !album.photos.first.nil? %>
+                <%= render partial: 'render_album_view', locals: {album: album, index: number} %>
+                <% number += 1 %>
+              <%end%>
             <%end%>
           </div>
         </div>
