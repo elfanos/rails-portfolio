@@ -104,11 +104,11 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   version :normal_white do
      process :cover
-     process :resize_and_pad  => [450, 630, 'white']
-     process :convert => :png
+     process :resize_and_pad  => [200, 200, 'white']
+     process :convert => :jpg
 
      def full_filename (for_file = model.source.file)
-       super.chomp(File.extname(super)) + '.png'
+       super.chomp(File.extname(super)) + '.jpg'
      end
   end
 
