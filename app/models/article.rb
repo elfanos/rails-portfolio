@@ -3,4 +3,5 @@ class Article < ActiveRecord::Base
   validates_attachment :document, content_type: { content_type: "application/pdf" }
   mount_uploader :paper, PaperUploader
   mount_uploader :picture, PictureUploader
+
 end
