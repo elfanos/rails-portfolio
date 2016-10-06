@@ -3,8 +3,8 @@
 class PaperUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-  include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  # include CarrierWave::RMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   storage :fog
@@ -42,11 +42,10 @@ class PaperUploader < CarrierWave::Uploader::Base
     %w(pdf jpg jpeg gif png)
   end
 
-  # def cover
-  #   manipulate! do |frame, index|
-  #     frame if index.zero?
-  #   end
-  # end
+  def cover
+    pdf = MiniMagick::Image.open(self.file.path)
+    pdf.pages.first
+  end
 
 
 # version :thumb do
@@ -69,15 +68,15 @@ class PaperUploader < CarrierWave::Uploader::Base
 #    end
 # end
 #
-# version :normal_white do
-#    process :cover
-#    process :resize_and_pad  => [450, 630, 'white']
-#    process :convert => :png
-#
-#    def full_filename (for_file = model.source.file)
-#      super.chomp(File.extname(super)) + '.png'
-#    end
-# end
+version :normal_white do
+   process :cover
+   process :resize_and_pad  => [450, 630, 'white']
+   process :convert => :png
+
+   def full_filename (for_file = model.source.file)
+     super.chomp(File.extname(super)) + '.png'
+   end
+end
 
 
 
