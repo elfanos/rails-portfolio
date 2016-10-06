@@ -1,10 +1,8 @@
 ActiveAdmin.register Article do
-  permit_params :name, :description, :document, :picture, :paper
+  permit_params :name, :description, :paper
   index do
     column :document
     column :name
-    column :description
-    column :picture
     column :paper
     actions
   end
@@ -13,8 +11,6 @@ ActiveAdmin.register Article do
       # ...
       f.input :name
       f.input :description
-      f.input :document, as: :file
-      f.input :picture, as: :file
       f.input :paper, as: :file
     end
     actions
