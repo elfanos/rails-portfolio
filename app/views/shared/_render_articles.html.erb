@@ -1,12 +1,12 @@
 
 <div class="col-md-3 col-lg-3 col-xs-3 col-sm-3">
     <div class="article-picture">
-      <%=link_to(article.document.url) do %>
-        <%=image_tag(article.picture.height_thumb, class:"img-responsive")%>
+      <%=link_to(article.paper.url) do %>
+        <%=image_tag(article.paper.normal_white, class:"img-responsive")%>
       <%end%>
     </div>
       <div class="header-text">
-        <%=link_to(article.document.url) do %>
+        <%=link_to(article.paper.url) do %>
           <h2><%=article.name%></h2>
         <%end%>
       </div>

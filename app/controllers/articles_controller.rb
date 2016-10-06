@@ -14,6 +14,6 @@ class ArticlesController < ApplicationController
   end
   private
    def article_params
-     params.require(:article).premit(:name, :description,:document, :picture)
+     params.require(:article).premit(:name, :description,:document, :picture, :paper)
    end
 end
