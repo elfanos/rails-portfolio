@@ -22,44 +22,44 @@ class PictureUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  process :resize_to_fit => [1024, 1024]
+  # process :resize_to_fit => [1024, 1024]
   #
   # def scale(width, height)
   #   process :resize_to_fit => [width,height]
   #   # do something
   # end
-  version :article_thumb do
-    process :resize_to_fit =>[450,600]
-  end
-  version :width_thumb do
-    process :resize_to_fill => [390,300]
-  end
+  # version :article_thumb do
+  #   process :resize_to_fit =>[450,600]
+  # end
+  # version :width_thumb do
+  #   process :resize_to_fill => [390,300]
+  # end
 
   version :normal_thumb do
     process :resize_to_fill => [700,700]
   end
-  version :height_thumb do
-    process :resize_to_fill => [250,300]
-  end
-
-  version :height_thumb_more_width do
-    process :resize_to_fill => [270,300]
-  end
-
-  version :height_thumb_less_width do
-    process :resize_to_fill => [240,300]
-  end
-  # Create different versions of your uploaded files:
-  version :thumb do
-    process :resize_to_fit => [320, 310]
-  end
+  # version :height_thumb do
+  #   process :resize_to_fill => [250,300]
+  # end
+  #
+  # version :height_thumb_more_width do
+  #   process :resize_to_fill => [270,300]
+  # end
+  #
+  # version :height_thumb_less_width do
+  #   process :resize_to_fill => [240,300]
+  # end
+  # # Create different versions of your uploaded files:
+  # version :thumb do
+  #   process :resize_to_fit => [320, 310]
+  # end
   version :picture_view do
     process :resize_to_fit => [900,900]
   end
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_white_list
-    %w(jpg jpeg gif png)
+    %w(pdf jpg jpeg gif png)
   end
 
   # Override the filename of the uploaded files:
