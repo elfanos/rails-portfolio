@@ -13,6 +13,18 @@ class PictureUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+ #  def paper_shape
+ #   manipulate! do |img|
+ #     if img.rows*4 != img.columns*3
+ #       width=img.columns
+ #       height=img.columns/3*4
+ #       img.crop!(0,0,width,height,true)
+ #     else
+ #       img
+ #     end
+ #   end
+ # end
+
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:
@@ -33,6 +45,16 @@ class PictureUploader < CarrierWave::Uploader::Base
   # end
   # version :width_thumb do
   #   process :resize_to_fill => [390,300]
+  # end
+
+  # version :thumb do #all browsers except safari
+  #   process :resize_to_fit => [450,630]
+  #   process :convert => 'jpg' #must convert to jpg before running paper shape
+  #   process :paper_shape
+  #   process :convert => 'jpg' #after running paper_shape it will default to original file type
+  #   def full_filename (for_file = model.logo.file)
+  #     super.chomp(File.extname(super)) + '.jpg'
+  #   end
   # end
 
   version :normal_thumb do
@@ -58,9 +80,24 @@ class PictureUploader < CarrierWave::Uploader::Base
   end
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
+
+  # version :web_thumb do
+  #   process :thumbnail_pdf
+  # end
+  # 
+  # def thumbnail_pdf
+  #   manipulate! do |img|
+  #     img.format("png", 1)
+  #     img.resize("150x150")
+  #     img = yield(img) if block_given?
+  #     img
+  #   end
+  # end
+
   def extension_white_list
     %w(pdf jpg jpeg gif png)
   end
+
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.

@@ -3,6 +3,7 @@ ActiveAdmin.register Article do
   index do
     column :document
     column :name
+    column :picture
     column :paper
     actions
   end
