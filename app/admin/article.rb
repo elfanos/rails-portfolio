@@ -3,7 +3,6 @@ ActiveAdmin.register Article do
   index do
     column :document
     column :name
-    column :picture
     column :paper
     actions
   end
@@ -12,7 +11,6 @@ ActiveAdmin.register Article do
       # ...
       f.input :name
       f.input :description
-      f.input :picture, as: :file
       f.input :paper, as: :file
     end
     actions
