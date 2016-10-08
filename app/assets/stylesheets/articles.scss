@@ -91,6 +91,17 @@
   a:hover, a:focus{
     text-decoration: none;
   }
+
+  @media only screen and (max-width: 768px){
+    h2, h3 {
+      font-family: "adobe-caslon-pro";
+      text-transform: none;
+      letter-spacing: 2px;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 10px;
+    }
+  }
 }
 .article-picture{
   background-color: black;
