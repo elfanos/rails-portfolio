@@ -75,12 +75,17 @@ class PaperUploader < CarrierWave::Uploader::Base
 #
 version :normal_white do
    process :cover
-   process :resize_and_pad  => [450, 630, 'white']
    process :convert => :png
-
+   process :resize_and_pad  => [450, 630, 'white']
+   process :set_content_type_png
    def full_filename (for_file = model.source.file)
      super.chomp(File.extname(super)) + '.png'
    end
+end
+
+def set_content_type_png(*args)
+    Rails.logger.debug "what content typ: #{file.content_type}"
+    self.file.instance_variable_set(:@content_type, "image/png")
 end
 #
 

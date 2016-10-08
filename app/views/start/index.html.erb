@@ -8,10 +8,11 @@
           </div>
           <div class="text">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Aenean nec nibh vitae nunc vehicula porttitor.
-              In suscipit justo sed felis tristique vehicula. Nam vitae venenatis
-               dui. Integer nec lorem tempo
+              <%if !@profile.nil?%>
+                <%if !@profile.about.nil?%>
+                  <%=@profile.about%>
+                <%end%>
+              <%end%>
             </p>
           </div>
           <div class="headers">
@@ -20,8 +21,11 @@
           </div>
           <div class="text">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Aenean nec nibh vitae nunc vehicula porttit
+              <%if !@profile.nil?%>
+                <%if !@profile.experince.nil?%>
+                  <%=@profile.experince%>
+                <%end%>
+              <%end%>
             </p>
           </div>
           <div class="headers">
@@ -30,11 +34,15 @@
           </div>
           <div class="text">
             <p>
-              Social medias
+            <%if !@profile.nil?%>
+              <%if !@profile.contact.nil?%>
+                <%=@profile.contact%>
+              <%end%>
+            <%end%>
             </p>
-            <i class="fa fa-twitter" aria-hidden="true">haj</i>
+            <!-- <i class="fa fa-twitter" aria-hidden="true">haj</i>
             <i class="fa fa-facebook" aria-hidden="true">haj</i>
-            <i class="fa fa-flickr" aria-hidden="true">haj</i>
+            <i class="fa fa-flickr" aria-hidden="true">haj</i> -->
           </br>
         </br>
             <p>
@@ -51,16 +59,21 @@
           </div>
           <div class="text">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Aenean nec nibh vitae nunc vehicula porttitor.
-              In suscipit justo sed felis tristique vehicula. Nam vitae venenatis
-               dui. Integer nec lorem tempo
+              <%if !@profile.nil?%>
+                <%if !@profile.clients.nil?%>
+                  <%=@profile.clients%>
+                <%end%>
+              <%end%>
             </p>
           </div>
       	</div>
       	<div class="col span_1_of_3">
         	<div class="picture-holder">
-            <%=image_tag(@photo.picture.normal_thumb, class:"img-responsive")%>
+            <%if !@profile.nil?%>
+              <%if !@profile.profile_picture.nil?%>
+                <%=image_tag(@profile.profile_picture.normal_thumb, class:"img-responsive")%>
+              <%end%>
+            <%end%>
           </div>
       	</div>
     </div>
