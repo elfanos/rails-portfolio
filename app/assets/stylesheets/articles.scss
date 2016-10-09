@@ -93,14 +93,7 @@
   }
 
   @media only screen and (max-width: 768px){
-    h2, h3 {
-      font-family: "adobe-caslon-pro";
-      text-transform: none;
-      letter-spacing: 2px;
-      font-weight: 400;
-      font-style: italic;
-      font-size: 10px;
-    }
+     // TODO:
   }
 }
 .article-picture{
@@ -113,6 +106,17 @@
 }
 .article-picture:hover img{
     opacity: 0.5;
+}
+#article-headers-id{
+  h2, h3 {
+    font-family: "adobe-caslon-pro";
+    text-transform: none;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 14px;
+  }
+
 }
 .article-columns{
 
