@@ -8,9 +8,19 @@ Rails.application.routes.draw do
   resources :articles
   resources :start
   resources :imagesliders
-  match '/contacts',     to: 'contacts#new',             via: 'get'
+  #match 'contacts', to: 'contacts#new', as:'contacts', via: 'get'
+  #match 'contacts', to: 'contacts_new#create', as:'contacts', via: 'post'
+
+  get 'contacts' => 'contacts#new', :as => 'contact'
+  post 'contacts' => 'contacts#message_cast'
 
   resources "contacts", only: [:new, :create]
+  #match 'contacts' => 'contacts#new', :as => 'contacts', :via => :get
+  #match 'contacts' => 'contacts#create', :as => 'contacts', :via => :post
+  #get 'contacts', to: 'contacts#new', as: 'contacts'
+  #post 'contacts', to: 'contacts#create', as: 'contacts'
+  # get 'contact', to: 'messages#new', as: 'contact'
+  # post 'contact', to: 'messages#create'
 
   get '*path' => redirect('/')
 
