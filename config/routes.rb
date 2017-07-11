@@ -8,9 +8,12 @@ Rails.application.routes.draw do
   resources :articles
   resources :start
   resources :imagesliders
-  match '/contacts',     to: 'contacts#new',             via: 'get'
+  resources :contact_forms
+  #resources :contacts
+#  match '/contacts',     to: 'contacts#new',             via: 'get'
 
-  resources "contacts", only: [:new, :create]
+
+  #resources "contacts", only: [:create]
 
   get '*path' => redirect('/')
 

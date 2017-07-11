@@ -40,6 +40,8 @@ gem "paperclip", "~> 5.0.0"
 gem 'mail_form'
 gem 'simple_form'
 
+gem 'sendgrid-ruby'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -52,6 +54,7 @@ gem 'simple_form'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'foreman'
 end
 
 group :development do
