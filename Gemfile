@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 0.15'
+gem 'pg', '~> 0.20'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass'
@@ -27,8 +27,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'activeadmin', '~> 1.0.0.pre1'
 gem 'devise'
 
-gem "fog-aws"
-gem 'carrierwave'
+#gem "fog-aws"
+#gem 'carrierwave'
+
+gem 'fog-aws'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 gem 'mini_magick'
 gem 'rmagick'
@@ -42,6 +45,8 @@ gem 'simple_form'
 
 gem 'sendgrid-ruby'
 
+gem 'puma'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -54,6 +59,8 @@ gem 'sendgrid-ruby'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+
+  gem 'foreman'
 end
 
 group :development do
