@@ -5,7 +5,7 @@ include SendGrid
 
 def contact_me(mail)
   from = Email.new(email: mail.email)
-  to = Email.new(email: 'elfanos@gmail.com')
+  to = Email.new(email: 'julia@grufving.com')
   subject = "From my site"
   content = Content.new(type: 'text/plain', value: mail.message)
   mail = Mail.new(from, subject, to, content)
