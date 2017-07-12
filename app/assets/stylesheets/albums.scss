@@ -21,6 +21,9 @@
 
   }
 }
+.img-orienation > .img-new-responsive{
+  image-orientation: from-image;
+}
 
 #new-album-view{
   .hovereffect {
@@ -352,24 +355,6 @@ $white: white;
     text-rendering: optimizeLegibility;
     word-spacing: 5px;
     margin: 0;
-
-  //  mix-blend-mode: screen;
-     //mix-blend-mode: color-dodge;
-    // mix-blend-mode: color-burn;
-    // mix-blend-mode: hard-light;
-    // mix-blend-mode: difference;
-     //mix-blend-mode: exclusion;
-    // mix-blend-mode: hue;
-    // mix-blend-mode: saturation;
-    //line-height: 0.5;
-    // .blendning{
-    //   font-family: 'Alegreya Sans SC', sans-serif;
-    //   text-transform: uppercase;
-    //   background-color: none;
-    //   color: orange;
-    //   mix-blend-mode: screen;
-    //   //line-height: 0.5;
-    // }
   }
   .hovereffect h2:after {
     position: absolute;
@@ -655,6 +640,11 @@ $white: white;
   /*double span*/
   .span_1_2_of_7{
     width: 40.33%;
+  }
+  .img-new-responsive{
+    width: 100%;
+    height: auto;
+    background-size: cover;
   }
 
   /*  GO FULL WIDTH BELOW 480 PIXELS */

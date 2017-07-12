@@ -34,7 +34,7 @@ $(document).ready(function(){
                 <%if number < 1%>
                     <div class="col span_2_of_7">
                       <%=link_to(photo_path(photo)) do%>
-                        <%=image_tag(photo.picture.normal_thumb, class:"img-responsive ")%>
+                        <%=image_tag(photo.picture.normal_thumb, class:"img-responsive")%>
                       <%end%>
                     </div>
                 <%elsif number >= 1 and number < 2%>
@@ -84,6 +84,6 @@ $(document).ready(function(){
           </div>
         </div>
       </div>
-    </div>  
+    </div>
   </div>
 </div>

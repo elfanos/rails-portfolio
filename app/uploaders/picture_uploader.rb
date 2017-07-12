@@ -35,6 +35,13 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
   # process :resize_to_fit => [1024, 1024]
+  def fix_exif_rotation #this is my attempted solution
+    manipulate! do |img|
+      img.tap(&:auto_orient)
+    end
+  end
+
+  process :fix_exif_rotation
   #
   # def scale(width, height)
   #   process :resize_to_fit => [width,height]
@@ -101,6 +108,7 @@ class PictureUploader < CarrierWave::Uploader::Base
     pdf = MiniMagick::Image.open(self.file.path)
     pdf.pages.first
   end
+
 
   version :normal_white do
      process :cover
